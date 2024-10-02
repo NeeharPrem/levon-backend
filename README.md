@@ -78,11 +78,11 @@ The server should now be running on `http://localhost:3000`.
 ## Authentication and Authorization
 
 - JWT (JSON Web Tokens) are used for authentication.
-- Protected routes require a JWT cookie to ensure safe login.
+- Protected routes require  JWT cookie to ensure safe login.
 
 ## Data Fetching and Caching
 
-- External API data is cached for better API performance.
+- External API data is used to get weather data and cached for better API performance.
 
 ## Database Integration
 
