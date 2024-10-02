@@ -5,9 +5,9 @@ import { getWeather } from '../controllers/weatherController';
 const router = express.Router();
 
 router.get(
-    '/:query',
+    '/:place',
     [
-        check('query')
+        check('place')
             .isLength({ min: 1 })
             .withMessage('Search cannot be empty.')
             .isAlpha()

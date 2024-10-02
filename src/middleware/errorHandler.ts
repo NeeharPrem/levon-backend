@@ -10,14 +10,11 @@ const logger = winston.createLogger({
     transports: [
         new winston.transports.File({ filename: 'error.log', level: 'error' }),
         new winston.transports.File({ filename: 'combined.log' }),
+        new winston.transports.Console({
+            format: winston.format.simple()
+        }),
     ],
 });
-
-if (process.env.NODE_ENV !== 'production') {
-    logger.add(new winston.transports.Console({
-        format: winston.format.simple(),
-    }));
-}
 
 class ValidationError extends Error {
     public statusCode: number;
@@ -61,7 +58,7 @@ const errorHandler = (err: Error & { statusCode?: number }, req: Request, res: R
         success: false,
         error: {
             message: message,
-            ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
+            stack: err.stack
         }
     });
 };

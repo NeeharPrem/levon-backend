@@ -55,7 +55,10 @@ export const createProduct = [
         products.push(newProduct);
         const io = req.app.get('io');
         io.emit('newProduct', newProduct);
-        res.status(201).json(newProduct);
+        res.status(201).json({
+            message: 'Product added successfully',
+            product: newProduct
+        });
     }
 ];
 
@@ -70,7 +73,10 @@ export const updateProduct = [
         const { name, price } = req.body as { name: string; price: number };
         product.name = name;
         product.price = price;
-        res.json(product);
+        res.json({
+            message: 'Product updated successfully',
+            product: product
+        });
     }
 ];
 

@@ -24,15 +24,15 @@ export const getWeather = async (req: Request, res: Response, next: NextFunction
         return next(new ValidationError('Validation error: ' + errors.array().map(err => err.msg).join(', ')));
     }
 
-    const { query } = req.params;
+    const { place } = req.params;
 
-    if (cache[query] && (Date.now() - cache[query].timestamp < cacheTime)) {
-        return res.json(cache[query].data);
+    if (cache[place] && (Date.now() - cache[place].timestamp < cacheTime)) {
+        return res.json(cache[place].data);
     }
 
     try {
-        const weatherData = await fetchWeatherData(query);
-        cache[query] = {
+        const weatherData = await fetchWeatherData(place);
+        cache[place] = {
             data: weatherData,
             timestamp: Date.now()
         };
