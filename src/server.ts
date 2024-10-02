@@ -3,14 +3,14 @@ import { Express, Request, Response, NextFunction } from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
-import authRoutes from './src/routes/authRoutes';
-import productRoutes from './src/routes/productRoutes';
-import userRoutes from './src/routes/userRoutes';
-import weatherRoutes from './src/routes/weatherRoutes';
+import authRoutes from './routes/authRoutes';
+import productRoutes from './routes/productRoutes';
+import userRoutes from './routes/userRoutes';
+import weatherRoutes from './routes/weatherRoutes';
 import cookieParser from 'cookie-parser';
 import http from 'http';
 import { Server } from 'socket.io';
-import { errorHandler } from './src/middleware/errorHandler';
+import { errorHandler } from './middleware/errorHandler';
 
 dotenv.config();
 
