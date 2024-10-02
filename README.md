@@ -11,7 +11,7 @@ This application provides backend using Node.js and MongoDB, offering APIs for I
 6. [Real-time Features](#real-time-features)
 7. [Error Handling and Logging](#error-handling-and-logging)
 8. [Cloud Deployment](#cloud-deployment)
-9. [Additional Features](#additional-features)
+9. [Additional informations](#additional-informations)
 
 ## Setup Instructions
 
@@ -78,7 +78,7 @@ The server should now be running on `http://localhost:3000`.
 ## Authentication and Authorization
 
 - JWT (JSON Web Tokens) are used for authentication.
-- Protected routes require a valid JWT in the Authorization header.
+- Protected routes require a JWT cookie to ensure safe login.
 
 ## Data Fetching and Caching
 
@@ -104,10 +104,10 @@ The server should now be running on `http://localhost:3000`.
 - The application is deployed on AWS.
 - Deployed BaseURL: https://13.233.120.219
 
-
-## API Documentation
+## Additional Informations
+### API Documentation
 
 API documentation can be found in the `docs/api.md` file.
 
-## Architecture Explanation
+### Architecture Explanation
 This Node.js application follows the MVC (Model-View-Controller) architecture. The controller manages the data flow between the model and the view. In this current implementation, there is no view component.
